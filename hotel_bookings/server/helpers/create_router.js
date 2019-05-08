@@ -5,7 +5,7 @@ const createRouter = function (collection) {
   const router = express.Router();
 
 
-  router.get('/' (req, res) => {
+  router.get('/', (req, res) => {
     collection
     .find()
     .toArray()
@@ -43,7 +43,7 @@ const createRouter = function (collection) {
     })
   }),
 
-  router.delete('/:id' (req, res) => {
+  router.delete('/:id', (req, res) => {
     const id = req.params.id;
     collection
     .deleteOne({ _id: ObjectID(id) })
