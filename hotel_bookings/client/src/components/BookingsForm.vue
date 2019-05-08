@@ -1,18 +1,19 @@
 <template lang="html">
   <form class="" v-on:submit="addBooking" method="post">
     <label for="customerName"></label>
-    <input type="text" name="customerName" value="Customer Name:">
+    <input type="text" name="customerName" placeholder="Customer Name:" v-model="name">
 
     <label for="customerEmail"></label>
-    <input type="text" name="customerEmail" value="Customer Email:">
+    <input type="text" name="customerEmail" placeholder="Customer Email:" v-model="email">
 
     <label for="roomNumber"></label>
-    <input type="number" name="roomNumber" value="Room Number:">
+    <input type="number" name="roomNumber" placeholder="Room Number:"
+    v-model="room">
 
     <label for="checkedIn"></label>
-    <input type="checkbox" name="checkedIn" value="">
+    <input type="checkbox" name="checkedIn" value="" v-model="checkedIn">
 
-    <input type="submit" id="save" value="Save">
+    <input type="submit" id="save" value="Add Booking">
   </form>
 </template>
 
@@ -25,7 +26,8 @@ export default {
     return{
       name: "",
       email: "",
-      room: null
+      room: null,
+      checkedIn: false
     }
   },
   methods: {
@@ -36,6 +38,11 @@ export default {
         email: this.email,
         room: this.room
       }
+
+      this.name = "",
+      this.email = "",
+      this.room = null //ask is this best way??
+
       BookingsService.postBooking(booking)
       .then((res) => eventBus.$emit('refresh-data', res))
     }
