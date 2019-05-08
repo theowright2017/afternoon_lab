@@ -16,7 +16,7 @@
     <input type="submit" id="save" value="Add Booking">
   </form>
 </template>
-
+<!--  -->
 <script>
 import {eventBus} from '@/main.js'
 import BookingsService from '@/services/BookingsService.js'
