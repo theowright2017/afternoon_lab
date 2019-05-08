@@ -13,10 +13,10 @@ MongoClient.connect('mongodb://localhost:27017')
   const db = client.db('bookings');
   const bookingsCollection = db.collection('bookings');
   const bookingsRouter = createRouter(bookingsCollection);
-  app.use('/api/bookings', bookingsCollection);
+  app.use('/api/bookings', bookingsRouter);
 })
 .catch(console.error);
 
 app.listen(3000, function() {
-  console.log('Listening on port ${this.address().port}');
+  console.log(`Listening on port ${this.address().port}`);
 });
