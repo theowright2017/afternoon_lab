@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="Header">
+    <img src="@/assets/logo.png" alt="">
     <h1>{{text}}</h1>
   </div>
 </template>
