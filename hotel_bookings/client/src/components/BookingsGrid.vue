@@ -9,7 +9,7 @@
 
       <!-- <input type="checkbox" name="booked" value="">
       <label for="booked">Checked In?</label> -->
-      <!--  -->
+
     </div>
   </div>
 </template>
